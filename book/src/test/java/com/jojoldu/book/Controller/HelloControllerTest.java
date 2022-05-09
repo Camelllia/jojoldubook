@@ -25,4 +25,18 @@ public class HelloControllerTest {
                 .andExpect(status().isOk()) // 위 요청 결과에 따라 상태는 200이며
                 .andExpect(content().string(hello)); // response body에 hello가 있는지 검증
     }
+
+    @Test
+    public void helloDto가_리턴된다() throws Exception {
+        String name = "hello";
+        int amount = 1000;
+
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name", name)
+                        .param("amount", String.valueOf(amount)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount)));
+    }
 }
