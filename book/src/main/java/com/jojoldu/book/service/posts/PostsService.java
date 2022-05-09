@@ -4,7 +4,7 @@ import com.jojoldu.book.Dto.PostsResponseDto;
 import com.jojoldu.book.Dto.PostsSaveRequestDto;
 import com.jojoldu.book.Dto.PostsUpdateRequestDto;
 import com.jojoldu.book.domain.posts.Posts;
-import com.jojoldu.book.domain.posts.PostsRepository;
+import com.jojoldu.book.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
